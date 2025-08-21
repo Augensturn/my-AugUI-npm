@@ -1,0 +1,23 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "docs/.vitepress/dist"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/index.html",
+      "status": 200
+    }
+  ],
+  "installCommand": "npm install",
+  "buildCommand": "npm run docs:build",
+  "devCommand": "npm run docs:dev",
+  "framework": "vite"
+}
