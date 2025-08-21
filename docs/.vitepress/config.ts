@@ -4,7 +4,7 @@ import { containerPreview, componentPreview } from '@vitepress-demo-preview/plug
 import { fileURLToPath, URL } from 'node:url'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  base: '/my-element-docs/',
+  base: '/',
   title: "Augensturn-UI",
   description: "轻量级组件库",
   vite: {    
