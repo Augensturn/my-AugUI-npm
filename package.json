@@ -18,11 +18,13 @@
   "files": [
     "dist"
   ],
-  "sideEffects": ["dist/index.css"],
+  "sideEffects": [
+    "dist/index.css"
+  ],
   "main": "./dist/umd/au-element.umd.cjs",
   "module": "./dist/es/au-element.js",
   "types": "./dist/types/index.d.ts",
-   "exports": {
+  "exports": {
     ".": {
       "import": "./dist/es/au-element.js",
       "require": "./dist/umd/au-element.umd.cjs",
@@ -58,7 +60,6 @@
     "@popperjs/core": "^2.11.8",
     "async-validator": "^4.2.5",
     "lodash-es": "^4.17.21"
-    
   },
   "peerDependencies": {
     "vue": "^3.5.18"
@@ -78,6 +79,7 @@
     "eslint-plugin-vue": "~10.3.0",
     "jiti": "^2.4.2",
     "jsdom": "^26.1.0",
+    "move-file": "^3.1.0",
     "npm-run-all2": "^8.0.4",
     "postcss": "^8.5.6",
     "postcss-for": "^2.1.1",
