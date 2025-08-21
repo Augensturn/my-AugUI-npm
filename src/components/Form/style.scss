@@ -1,0 +1,50 @@
+.au-form {
+  --au-form-label-font-size: var(--au-font-size-base);
+  --au-form-content-font-size: var(--au-font-size-base);
+}
+.au-form-item {
+  display: flex;
+  margin-bottom: 18px;
+  .au-form-item__label {
+    width: 150px;
+    height: 32px;
+    line-height: 32px;
+    padding: 0 12px 0 0;
+    box-sizing: border-box;
+    display: inline-flex;
+    justify-content: flex-end;
+    font-size: var(--au-form-label-font-size);
+    color: var(--au-text-color-regular);
+  }
+  .au-form-item__content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    flex: 1;
+    line-height: 32px;
+    font-size: var(--au-form-content-font-size);
+    min-width: 0;
+    position: relative;
+  }
+  .au-form-item__error-msg {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding-top: 2px;
+    color: var(--au-color-danger);
+    font-size: 12px;
+    line-height: 1;
+  }
+}
+
+.au-form-item.is-error .au-input__wrapper {
+  box-shadow: 0 0 0 1px var(--au-color-danger) inset;
+}
+.au-form-item.is-success .au-input__wrapper {
+  box-shadow: 0 0 0 1px var(--au-color-success) inset;
+}
+.au-form-item.is-required > .au-form-item__label::before {
+  content: "*";
+  color: var(--au-color-danger);
+  margin-right: 4px;
+}

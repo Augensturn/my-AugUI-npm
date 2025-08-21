@@ -1,0 +1,222 @@
+.au-input {
+  --au-input-text-color: var(--au-text-color-regular);
+  --au-input-border: var(--au-border);
+  --au-input-hover-border: var(--au-border-color-hover);
+  --au-input-focus-border: var(--au-color-primary);
+  --au-input-transparent-border: 0 0 0 1px transparent inset;
+  --au-input-border-color: var(--au-border-color);
+  --au-input-border-radius: var(--au-border-radius-base);
+  --au-input-bg-color: var(--au-fill-color-blank);
+  --au-input-icon-color: var(--au-text-color-placeholder);
+  --au-input-placeholder-color: var(--au-text-color-placeholder);
+  --au-input-hover-border-color: var(--au-border-color-hover);
+  --au-input-clear-hover-color: var(--au-text-color-secondary);
+  --au-input-focus-border-color: var(--au-color-primary);
+}
+
+.au-input {
+  --au-input-height: var(--au-component-size);
+  position: relative;
+  font-size: var(--au-font-size-base);
+  display: inline-flex;
+  width: 100%;
+  line-height: var(--au-input-height);
+  box-sizing: border-box;
+  vertical-align: middle;
+  &.is-disabled {
+    cursor: not-allowed;
+    .au-input__wrapper {
+      background-color: var(--au-disabled-bg-color);
+      box-shadow: 0 0 0 1px var(--au-disabled-border-color) inset;
+    }
+    .au-input__inner {
+      color: var(--au-disabled-text-color);
+      -webkit-text-fill-color: var(--au-disabled-text-color);
+      cursor: not-allowed;
+    }
+    .au-textarea__inner {
+      background-color: var(--au-disabled-bg-color);
+      box-shadow: 0 0 0 1px var(--au-disabled-border-color) inset;
+      color: var(--au-disabled-text-color);
+      -webkit-text-fill-color: var(--au-disabled-text-color);
+      cursor: not-allowed;
+    }
+  }
+  &.is-prepend {
+    >.au-input__wrapper {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+  }
+  &.is-append {
+    >.au-input__wrapper {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+  }
+}
+
+.au-input--large {
+  --au-input-height: var(--au-component-size-large);
+  font-size: 14px;
+  .au-input__wrapper {
+    padding: 1px 15px;
+    .au-input__inner {
+      --au-input-inner-height: calc(var(--au-input-height, 40px) - 2px);
+    }
+  }
+
+}
+.au-input--small {
+  --au-input-height: var(--au-component-size-small);
+  font-size: 12px;
+  .au-input__wrapper {
+    padding: 1px 7px;
+    .au-input__inner {
+      --au-input-inner-height: calc(var(--au-input-height, 24px) - 2px);
+    } 
+  }
+}
+.au-input__prefix, .au-input__suffix {
+  display: inline-flex;
+  white-space: nowrap;
+  flex-shrink: 0;
+  flex-wrap: nowrap;
+  height: 100%;
+  text-align: center;
+  color: var(--au-input-icon-color, var(--au-text-color-placeholder));
+  transition: all var(--au-transition-duration);
+}
+.au-input__prefix {
+  >:first-child {
+    margin-left: 0px !important;
+  }
+  >:last-child {
+    margin-right: 8px !important;
+  }
+}
+.au-input__suffix {
+  >:first-child {
+    margin-left: 8px !important;
+  }
+  >:last-child {
+    margin-right: 0px !important;
+  }
+}
+.au-input__prepend, .au-input__append {
+  background-color: var(--au-fill-color-light);
+  color: var(--au-color-info);
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100%;
+  border-radius: var(--au-input-border-radius);
+  padding: 0 20px;
+  white-space: nowrap;
+}
+.au-input__prepend {
+  border-right: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  box-shadow: 1px 0 0 0 var(--au-input-border-color) inset,0 1px 0 0 var(--au-input-border-color) inset,0 -1px 0 0 var(--au-input-border-color) inset;
+
+}
+.au-input__append {
+  border-left: 0;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  box-shadow: 0 1px 0 0 var(--au-input-border-color) inset,0 -1px 0 0 var(--au-input-border-color) inset,-1px 0 0 0 var(--au-input-border-color) inset;
+  & >.au-input__wrapper {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+}
+
+.au-input--textarea {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: bottom;
+  font-size: var(--au-font-size-base);
+}
+.au-textarea__wrapper {
+  position: relative;
+  display: block;
+  resize: vertical;
+  padding: 5px 11px;
+  line-height: 1.5;
+  box-sizing: border-box;
+  width: 100%;
+  font-size: inherit;
+  font-family: inherit;
+  color: var(--au-input-text-color, var(--au-text-color-regular));
+  background-color: var(--au-input-bg-color, var(--au-fill-color-blank));
+  background-image: none;
+//   -webkit-appearance: none;
+  box-shadow: 0 0 0 1px var(--au-input-border-color, var(--au-border-color)) inset;
+  border-radius: var(--au-input-border-radius, var(--au-border-radius-base));
+  transition: var(--au-transition-box-shadow);
+  border: none;
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 1px var(--au-input-focus-border-color) inset;
+  }
+  &::placeholder {
+    color: var(--au-input-placeholder-color);
+  }
+}
+.au-input__wrapper {
+  display: inline-flex;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: center;
+  padding: 1px 11px;
+  background-color: var(--au-input-bg-color, var(--au-fill-color-blank));
+  background-image: none;
+  border-radius: var(--au-input-border-radius, var(--au-border-radius-base));
+  transition: var(--au-transition-box-shadow);
+  box-shadow: 0 0 0 1px var(--au-input-border-color, var(--au-border-color)) inset;
+  &:hover {
+    box-shadow: 0 0 0 1px var(--au-input-hover-border-color) inset;
+  }
+  &.is-focus {
+    box-shadow: 0 0 0 1px var(--au-input-focus-border-color) inset;
+  }
+  .au-input__inner {
+    --au-input-inner-height: calc(var(--au-input-height, 32px) - 2px);
+    width: 100%;
+    flex-grow: 1;
+    // -webkit-appearance: none;
+    color: var(--au-input-text-color, var(--au-text-color-regular));
+    font-size: inherit;
+    height: var(--au-input-inner-height);
+    line-height: var(--au-input-inner-height);
+    padding: 0;
+    outline: none;
+    border: none;
+    background: none;
+    box-sizing: border-box;
+    &::placeholder {
+      color: var(--au-input-placeholder-color);
+    }
+  }  
+  .au-icon {
+    height: inherit;
+    line-height: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all var(--au-transition-duration);
+    margin-left: 8px;
+    cursor: pointer;
+  }
+  .au-input__clear, .au-input-icon__password {
+    color: var(--au-input-icon-color);
+    font-size: 14px;
+    cursor: pointer;
+    &:hover {
+     color: var(--au-input-clear-hover-color);
+    }
+  }
+}

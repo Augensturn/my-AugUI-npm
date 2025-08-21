@@ -1,0 +1,58 @@
+.au-message {
+  --au-message-bg-color: var(--au-color-info-light-9);
+  --au-message-border-color: var(--au-border-color-lighter);
+  --au-message-padding: 15px 19px;
+  --au-message-close-size: 16px;
+  --au-message-close-icon-color: var(--au-text-color-placeholder);
+  --au-message-close-hover-color: var(--au-text-color-secondary);
+}
+
+.au-message {
+  width: fit-content;
+  max-width: calc(100% - 32px);
+  box-sizing: border-box;
+  border-radius: var(--au-border-radius-base);
+  border-width: var(--au-border-width);
+  border-style: var(--au-border-style);
+  border-color: var(--au-message-border-color);
+  position: fixed;
+  left: 50%;
+  top: 20px;
+  transform: translateX(-50%);
+  background-color: var(--au-message-bg-color);
+  padding: var(--au-message-padding);
+  display: flex;
+  align-items: center;
+  transition: top var(--au-transition-duration), opacity var(--au-transition-duration), transform var(--au-transition-duration);
+  .au-message__content {
+    color: var(--au-message-text-color);
+    overflow-wrap: anywhere;
+  }
+  &.is-close .au-message__content {
+    padding-right: 30px;
+  }
+  .au-message__close {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+  }
+  .au-message__close svg {
+    cursor: pointer;
+  }
+}
+
+@each $val in (info,success,warning,error) { 
+  .au-message-#{$val} {
+    --au-message-bg-color: var(--au-color-#{$val}-light-9);
+    --au-message-border-color: var(--au-color-#{$val}-light-8);
+    --au-message-text-color: var(--au-color-#{$val});
+    .au-message__close {
+      --au-icon-color: var(--au-color-#{$val});
+    }
+  }
+}
+.au-message.fade-up-enter-from,
+.au-message.fade-up-leave-to {
+  opacity: 0;
+  transform: translate(-50%, -100%);
+}

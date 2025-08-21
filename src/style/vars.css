@@ -1,0 +1,98 @@
+:root{
+    /*color*/
+    --au-color-white: #ffffff;
+    --au-color-black: #000000;
+    --au-color-primary: #409eff;
+    --au-color-primary-light-3: rgb(121, 187, 255);
+    --au-color-primary-light-5: rgb(160, 207, 255);
+    --au-color-primary-light-7: rgb(198, 226, 255);
+    --au-color-primary-light-8: rgb(217, 236, 255);
+    --au-color-primary-light-9: rgb(236, 245, 255);
+    --au-color-primary-dark-2: rgb(51, 126, 204);
+    --au-color-success: #67c23a;
+    --au-color-success-light-3: rgb(149, 212, 117);
+    --au-color-success-light-5: rgb(179, 225, 157);
+    --au-color-success-light-7: rgb(209, 237, 196);
+    --au-color-success-light-8: rgb(225, 243, 216);
+    --au-color-success-light-9: rgb(240, 249, 235);
+    --au-color-success-dark-2: rgb(82, 155, 46);
+    --au-color-warning: #e6a23c;
+    --au-color-warning-light-3: rgb(238, 190, 119);
+    --au-color-warning-light-5: rgb(243, 209, 158);
+    --au-color-warning-light-7: rgb(248, 227, 197);
+    --au-color-warning-light-8: rgb(250, 236, 216);
+    --au-color-warning-light-9: rgb(253, 246, 236);
+    --au-color-warning-dark-2: rgb(184, 130, 48);
+    --au-color-danger: #f56c6c;
+    --au-color-danger-light-3: rgb(248, 152, 152);
+    --au-color-danger-light-5: rgb(250, 182, 182);
+    --au-color-danger-light-7: rgb(252, 211, 211);
+    --au-color-danger-light-8: rgb(253, 226, 226);
+    --au-color-danger-light-9: rgb(254, 240, 240);
+    --au-color-danger-dark-2: rgb(196, 86, 86);
+    --au-color-error: #f56c6c;
+    --au-color-error-light-3: rgb(248, 152, 152);
+    --au-color-error-light-5: rgb(250, 182, 182);
+    --au-color-error-light-7: rgb(252, 211, 211);
+    --au-color-error-light-8: rgb(253, 226, 226);
+    --au-color-error-light-9: rgb(254, 240, 240);
+    --au-color-error-dark-2: rgb(196, 86, 86);
+    --au-color-info: #909399;
+    --au-color-info-light-3: rgb(177, 179, 184);
+    --au-color-info-light-5: rgb(200, 201, 204);
+    --au-color-info-light-7: rgb(222, 223, 224);
+    --au-color-info-light-8: rgb(233, 233, 235);
+    --au-color-info-light-9: rgb(244, 244, 245);
+    --au-color-info-dark-2: rgb(115, 118, 122);
+    --au-bg-color: #ffffff;
+    --au-bg-color-page: #f2f3f5;
+    --au-bg-color-overlay: #ffffff;
+    --au-text-color-primary: #303133;
+    --au-text-color-regular: #606266;
+    --au-text-color-secondary: #909399;
+    --au-text-color-placeholder: #a8abb2;
+    --au-text-color-disabled: #c0c4cc;
+    --au-border-color: #dcdfe6;
+    --au-border-color-light: #e4e7ed;
+    --au-border-color-lighter: #ebeef5;
+    --au-border-color-extra-light: #f2f6fc;
+    --au-border-color-dark: #d4d7de;
+    --au-border-color-darker: #cdd0d6;
+    --au-fill-color: #f0f2f5;
+    --au-fill-color-light: #f5f7fa;
+    --au-fill-color-lighter: #fafafa;
+    --au-fill-color-extra-light: #fafcff;
+    --au-fill-color-dark: #ebedf0;
+    --au-fill-color-darker: #e6e8eb;
+    --au-fill-color-blank: #ffffff;
+
+    /*border*/
+
+    --au-border-width: 1px;
+    --au-border-style: solid;
+    --au-border-color-hover: var(--au-text-color-disabled);
+    --au-border: var(--au-border-width) var(--au-border-style) var(--au-border-color-hover);
+    --au-border-radius-base: 4px;
+    --au-border-radius-small: 2px;
+    --au-border-radius-round: 20px;
+    --au-border-radius-circle: 100%;
+
+    /*font*/
+    --au-font-size-extra-large: 20px;
+    --au-font-size-large: 18px;
+    --au-font-size-medium: 16px;
+    --au-font-size-base: 14px;
+    --au-font-size-small: 13px;
+    --au-font-size-extra-small: 12px;
+    --au-font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    --au-font-weight-primary: 500;
+
+    /*disabled*/
+    --au-disabled-bg-color: var(--au-fill-color-light);
+    --au-disabled-text-color: var(--au-text-color-placeholder);
+    --au-disabled-border-color: var(--au-border-color-light);
+
+    /*animation*/
+    --au-transition-duration: .3s;
+    --au-transition-duration-fast: .3s;
+}

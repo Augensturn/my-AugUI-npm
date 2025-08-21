@@ -1,0 +1,19 @@
+
+{
+
+  "include": ["src/components/**/*","src/index.ts","src/hooks/**/*"],
+  "exclude": ["node_modules", "dist", "playground","**/*.test.ts",
+    "**/*.test.tsx",
+    "**/__tests__/**"],
+  "compilerOptions": {
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "declarationMap": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "jsx": "preserve"
+  }
+}
