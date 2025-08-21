@@ -41,6 +41,8 @@
   "scripts": {
     "dev": "vite",
     "build": "npm run build-only && npm run move-style",
+     "build-library": "npm run build-only && npm run move-style",
+    "build-demo": "vite build --outDir demo-dist",
     "preview": "vite preview",
     "build-only": "run-p build-es build-umd",
     "build-umd": "vite build --config vite.umd.config.ts",
