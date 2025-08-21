@@ -1,8 +1,20 @@
 {
-  "name": "augensturn-ui",
-  "version": "0.0.0",
-  "private": true,
+  "name": "@augensturn/element",
+  "version": "1.0.0",
+  "description": "Vue3 component library",
   "type": "module",
+  "author": "augensturn",
+  "license": "MIT",
+  "keywords": [
+    "component",
+    "UI",
+    "Vue3"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Augensturn/my-AugUI-npm.git"
+  },
+  "homepage": "https://github.com/Augensturn/my-AugUI-npm",
   "files": [
     "dist"
   ],
@@ -36,7 +48,8 @@
     "lint": "eslint . --fix",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
-    "docs:preview": "vitepress preview docs"
+    "docs:preview": "vitepress preview docs",
+    "prepublishOnly": "npm run build"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^7.0.0",
