@@ -45,7 +45,7 @@
     "build-only": "run-p build-es build-umd",
     "build-umd": "vite build --config vite.umd.config.ts",
     "build-es": "vite build --config vite.es.config.ts",
-    "move-style": "move-file dist/es/index.css dist/index.css",
+    "move-style":  "node -e \"const fs = require('fs'); fs.copyFileSync('dist/es/index.css', 'dist/index.css')\"",
     "type-check": "vue-tsc --build",
     "lint": "eslint . --fix",
     "docs:dev": "vitepress dev docs",
