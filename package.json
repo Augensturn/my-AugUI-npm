@@ -40,20 +40,20 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "npm run build-only && npm run move-style",
-     "build-library": "npm run build-only && npm run move-style",
+    "build": "npm run build-library && npm run docs:build",
+    "build-library": "npm run build-only && npm run move-style",
     "build-demo": "vite build --outDir demo-dist",
     "preview": "vite preview",
     "build-only": "run-p build-es build-umd",
     "build-umd": "vite build --config vite.umd.config.ts",
     "build-es": "vite build --config vite.es.config.ts",
-    "move-style":  "node -e \"const fs = require('fs'); fs.copyFileSync('dist/es/index.css', 'dist/index.css')\"",
+    "move-style": "node -e \"const fs = require('fs'); fs.copyFileSync('dist/es/index.css', 'dist/index.css')\"",
     "type-check": "vue-tsc --build",
     "lint": "eslint . --fix",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
     "docs:preview": "vitepress preview docs",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build-library"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^7.0.0",
