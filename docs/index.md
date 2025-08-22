@@ -5,9 +5,9 @@
 layout: home
 
 hero:
-  name: "Augensturn-element"
-  text: "学习相关组件及源码"
-  tagline: VitePress搭建静态部署--一款轻量级的组件库
+  name: "my-element-plus"
+  text: "学习相关组件及源码，仅供学习参考"
+  tagline: VitePress搭建静态部署
   actions:
     - theme: brand
       text: 组件使用文档

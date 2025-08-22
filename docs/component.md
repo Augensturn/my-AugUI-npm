@@ -25,6 +25,7 @@
 ### 语法高亮
 
 VitePress 提供由 [Shiki](https://github.com/shikijs/shiki) 提供支持的语法突出显示，以及行突出显示等附加功能：
+
 **Input**
 
 ````
@@ -52,6 +53,7 @@ export default {
 ```
 
 ### Custom Containers
+
 **Input**
 
 ```md
@@ -81,6 +83,7 @@ This is a details block.
 ::: info
 This is an info box.
 :::
+
 ::: tip
 This is a tip.
 :::
