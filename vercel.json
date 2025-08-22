@@ -9,11 +9,5 @@
         "buildCommand": "npm run docs:build"
       }
     }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
-    }
   ]
 }
