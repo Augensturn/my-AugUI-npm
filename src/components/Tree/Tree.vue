@@ -5,7 +5,10 @@
       :key="node.id"
       :node="node"
       :defaultExpandAll="defaultExpandAll"
+      :loadChildren="loadChildren"
       :selectable="selectable"
+      :containerHeight="containerHeight"
+      :itemHeight="itemHeight"
       @select="onSelect"
     />
   </div>
@@ -13,10 +16,17 @@
 
 <script lang="ts" setup>
 import { defineProps, defineEmits } from "vue";
-import type { TreeProps, TreeNode as TreeNodeType } from "./type";
+import type { TreeProps, TreeNodeType } from "./type";
 import TreeNode from "./TreeNode.vue";
 
-const props = defineProps<TreeProps>();
+const props = defineProps<
+  TreeProps & {
+    loadChildren?: (node: TreeNodeType) => Promise<TreeNodeType[]>;
+    containerHeight?: number; // 可视区域高度
+    itemHeight?: number; // 节点高度
+  }
+>();
+
 const emits = defineEmits<{
   (e: "select", node: TreeNodeType): void;
 }>();
@@ -25,7 +35,3 @@ function onSelect(node: TreeNodeType) {
   emits("select", node);
 }
 </script>
-
-<style lang="scss" scoped>
-@import "./style.scss";
-</style>

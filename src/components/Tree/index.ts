@@ -1,4 +1,9 @@
-import Tree from "./Tree.vue";
+import type { App } from 'vue'
+import Tree from './Tree.vue'
 
-export * from "./type";
-export default Tree;
+Tree.install = (app: App) => {
+  app.component(Tree.name as string, Tree)
+}
+
+export default Tree
+export * from './type'

@@ -5,7 +5,7 @@
 layout: home
 
 hero:
-  name: "my-element-plus"
+  name: "Augensturn-UI"
   text: "学习相关组件及源码，仅供学习参考"
   tagline: VitePress搭建静态部署
   actions:

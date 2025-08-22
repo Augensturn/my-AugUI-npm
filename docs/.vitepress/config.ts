@@ -46,6 +46,7 @@ export default defineConfig({
           { text: 'Select', link: '/components/select.md' },
           { text: 'Switch', link: '/components/switch.md' },
           { text: 'Tooltip', link: '/components/tooltip.md' },
+          { text: 'Tree', link: '/components/tree.md' },
         ],
       },
       {
@@ -64,7 +65,7 @@ export default defineConfig({
     ],
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/Fridolph/my-element-plus' }
+      { icon: 'github', link: 'https://github.com/Augensturn/my-AugUI-npm.git' }
     ],
   },
 })

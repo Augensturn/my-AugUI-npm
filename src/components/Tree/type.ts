@@ -1,12 +1,12 @@
-export interface TreeNode {
+export interface TreeNodeType {
   id: string | number;
   label: string;
-  children?: TreeNode[];
+  children?: TreeNodeType[];
   disabled?: boolean;
 }
 
 export interface TreeProps {
-  data: TreeNode[];
+  data: TreeNodeType[];
   defaultExpandAll?: boolean;
   selectable?: boolean;
 }

@@ -33,9 +33,9 @@ import {
   withCtx,
   withKeys,
   withScopeId
-} from "./chunk-3SACRV3M.js";
+} from "./chunk-HVR2FF6M.js";
 
-// node_modules/.pnpm/@vitepress-demo-preview+component@2.5.1_@netlify+blobs@9.1.2_@nuxt+kit@3.18.1_magicast@_3ea3a55c061c10620af1ff6faa7288ce/node_modules/@vitepress-demo-preview/component/dist/preview-component.js
+// node_modules/@vitepress-demo-preview/component/dist/preview-component.js
 var Go = Object.defineProperty;
 var Yo = (e, t, o) => t in e ? Go(e, t, { enumerable: true, configurable: true, writable: true, value: o }) : e[t] = o;
 var Z = (e, t, o) => (Yo(e, typeof t != "symbol" ? t + "" : t, o), o);

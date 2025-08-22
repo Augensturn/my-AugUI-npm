@@ -1,5 +1,5 @@
 ---
-title: Collapse | V-Element
+title: Collapse | Augensturn-UI
 description: Collapse 组件的文档
 ---
 

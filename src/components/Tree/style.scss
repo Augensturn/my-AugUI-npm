@@ -1,75 +1,87 @@
-.au-tooltip{
-    --au-popover-bg-color: var(--au-bg-color-overlay);
-    --au-popover-font-size: var(--au-font-size-base);
-    --au-popover-border-color: var(--au-border-color-lighter);
-    --au-popover-padding: 12px;
-    --au-popover-border-radius: 4px;
-    display: inline-block;
-}
-.au-tooltip{
-    .au-tooltip__popper {
-        background: var(--au-popover-bg-color);
-        border-radius: var(--au-popover-border-radius);
-        border:1px solid var(--au-popover-border-color);
-        padding: var(--au-popover-padding);
-        color: var(--au-text-color-regular);
-        line-height: 1.4;
-        text-align: justify;
-        font-size: var(--au-font-size-base);
-        box-shadow: var(--au-box-shadow-light);
-        word-break: break-all;
-        box-sizing: border-box;
-        z-index: 1000;
-        #arrow,
-        #arrow::before{
-            position: absolute;
-            width: 8px;
-            height: 8px;
-            box-sizing: border-box;
+.au-tree {
+  font-size: var(--au-font-size-base);
+  color: var(--au-text-color-regular);
+  background-color: var(--au-bg-color);
+  padding: 4px 0;
+  list-style: none;
+
+  .au-tree-node {
+    position: relative;
+    white-space: nowrap;
+    outline: none;
+    padding: 0;
+    cursor: pointer;
+    transition: background-color var(--au-transition-duration);
+
+    &__label {
+      display: inline-flex;
+      align-items: center;
+      height: 28px;
+      padding: 0px 6px;
+      margin-top: 28px;
+      border-radius: var(--au-border-radius-base);
+      transition: all var(--au-transition-duration);
+      color: var(--au-text-color-regular);
+
+      &:hover {
+        background-color: var(--au-fill-color-light);
+        color: var(--au-color-primary);
+      }
+
+      &.is-disabled {
+        color: var(--au-text-color-disabled);
+        cursor: not-allowed;
+
+        &:hover {
+          background-color: transparent;
+          color: var(--au-text-color-disabled);
         }
-        #arrow{
-            visibility: hidden;
-        }
-        #arrow::before{
-            visibility: visible;
-            content: "";
-            transform: rotate(45deg);
-        }
-        &[data-popper-placement ^='top'] > #arrow{
-            bottom: -5px;
-        }
-        &[data-popper-placement ^='bottom']> #arrow{
-            top: -5px;
-        }
-        &[data-popper-placement ^='left'] > #arrow{
-            right: -5px;
-        }
-        &[data-popper-placement ^='right'] > #arrow{
-            left: -5px;
-        }
-        &[data-popper-placement ^='top'] > #arrow::before{
-            border-right: 1px solid var(--au-popover-border-color);
-            border-bottom: 1px solid var(--au-popover-border-color);
-        }
-        &[data-popper-placement ^='bottom'] > #arrow::before{
-            border-left: 1px solid var(--au-popover-border-color);
-            border-top: 1px solid var(--au-popover-border-color);
-        }
-        &[data-popper-placement ^='left'] > #arrow::before{
-            border-right: 1px solid var(--au-popover-border-color);
-            border-top: 1px solid var(--au-popover-border-color);
-        }
-        &[data-popper-placement ^='right'] > #arrow::before{
-            border-left: 1px solid var(--au-popover-border-color);
-            border-bottom: 1px solid var(--au-popover-border-color);
-        }
+      }
     }
-    .fade-enter-active,
-    .fade-leave-active{
-        transition: opacity var(--au-transition-duration);
+
+    &__toggle {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 16px;
+      height: 16px;
+      margin-right: 4px;
+      font-size: 12px;
+      border-radius: var(--au-border-radius-small);
+      color: var(--au-text-color-secondary);
+      transition: transform var(--au-transition-duration);
+      cursor: pointer;
+
+      &:hover {
+        background-color: var(--au-fill-color-light);
+        color: var(--au-color-primary);
+      }
     }
-    .fade-enter-from,
-    .fade-leave-to{
-        opacity: 0;
+
+    &__children-wrapper {
+      // overflow: hidden;
+      position: relative;
+      overflow-y: auto; /* 关键点：容器内部滚动 */
+      max-height: 300px; /* demo：可配置，保证虚拟滚动有效 */
+      will-change: transform; /* 提升渲染性能，避免滚动卡顿 */
     }
+     /* 占位容器 */
+    &__spacer {
+      height: 0;
+      overflow: hidden;
+    }
+
+    &__children {
+      margin-left: 16px;
+      border-left: 1px dashed var(--au-border-color-lighter);
+      padding-left: 8px;
+      transition: height var(--au-transition-duration) ease-in-out;
+    }
+
+    &.is-selected > .au-tree-node__label {
+      background-color: var(--au-color-primary-light-9);
+      color: var(--au-color-primary);
+      font-weight: var(--au-font-weight-primary);
+    }
+  }
 }
